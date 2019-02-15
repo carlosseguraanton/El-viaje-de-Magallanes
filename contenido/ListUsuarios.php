@@ -16,6 +16,7 @@
         <th>Usuario</th><th>Puntuacion</th>
       </tr>
       <tr>
+        <!-- ----------------------------------- Revisar el campo curso en este fichero ----------------------------------- -->
         <td><?=$usuario->getNombre()?></td><td><?=$usuario->getPuntuacion()?></td><td><a href="../Controller/deleteUsuario.php?codigo=<?=$usuario->getCodigo()?>">Delete user</a><
       </tr>
     </table>
