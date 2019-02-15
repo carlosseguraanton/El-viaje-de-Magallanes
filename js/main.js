@@ -14,9 +14,15 @@ function main() {
 			divPregunta.text("Pregunta " + [index]);
 
 			$("body").append(divPregunta);
+
+			// $(".barco" + [index]).on("click", function(event) {
+				// divPregunta[index].fadeIn("slow");
+				divPregunta.addClass("pregunta" + [index]).fadeIn("slow");
+			// });
 			
 			// Queremos que el divPregunta aparezca con efecto .fadeIn("slow");
 			//$("body").append(divPregunta).fadeIn("slow");
+ 
 		});
 
 	}
