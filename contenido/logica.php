@@ -1,6 +1,6 @@
 <?php
 
-include 'conexion.php';
+include 'conexionBD.php';
 
 $nombre = $_POST['nombre'];
 $curso = $_POST['curso'];
@@ -23,18 +23,30 @@ $array_futbol = array(
 
 class Juego {
 
-    public static function getPVP($codigoProducto) {
+    public static function insertNombre($nombre, $curso) {
+        $conn = ConexionBD::Conectar();
+        
+        $sqlSelect = "SELECT nombre from usuario where nombre = '$nombre'";
+        
+        $resultadoSelect = $conn->query($sqlSelect);
+        
+        $fila = mysqli_num_rows($resultadoSelect);
+        
+        if ($fila == 1) {
+            echo 'Ya existe este usuario';
+        } else {
+            $sqlInsert = "INSERT into usuario (nombre, curso) values ('$nombre', '$curso', 500)";
+            
+            
+        }
+
+    }
+
+    /*public static function insertNombre($nombre, $curso) {
         $conn = ConexionBD::Conectar();
 
-        $sql = "SELECT PVP from producto where cod = ' . $codigoProducto . '";
-
-        $resultado = $conn->query($sql);
-
-        $fila = $resultado->fetch();
-
         return $fila['PVP'];
-    }
-    
+    }*/
 }
 
 ?>

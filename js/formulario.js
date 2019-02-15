@@ -27,8 +27,16 @@
 	};
 
 	var enviar = function(e) {
-		if (!esInputCorrecto()) {
+		if (esInputCorrecto()) {
+			console.log('Se envia');
+		} else {
 			console.log('Falto validar los Input');
+
+			// Aquí hay que mostrarle un mensajito de error al usuario //
+
+			// var mensaje = document.getElementsByClassName("");
+
+			//---------------------------------------------------------//
 
 			e.preventDefault();
 		}

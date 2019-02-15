@@ -14,11 +14,14 @@ function main() {
 			divPregunta.text("Pregunta " + [index]);
 
 			$("body").append(divPregunta);
+			
+			// Queremos que el divPregunta aparezca con efecto .fadeIn("slow");
+			//$("body").append(divPregunta).fadeIn("slow");
 		});
 
 	}
 
-	//------------------------------------------------------------------------------------------//
+	//--------------------------------- Se enviarán los datos por Ajax ---------------------------------//
 	$("button").click(function () {
 
 		var nombre = $("#nombre").val();
