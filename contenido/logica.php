@@ -36,17 +36,25 @@ class Juego {
             echo 'Ya existe este usuario';
         } else {
             $sqlInsert = "INSERT into usuario (nombre, curso) values ('$nombre', '$curso', 500)";
+
+            if ($conn->query($sqlInsert) === true) {
+                
+            }
             
             
         }
 
     }
 
-    /*public static function insertNombre($nombre, $curso) {
+    public static function obtenerPreguntaCompleta($nombre, $curso) {
         $conn = ConexionBD::Conectar();
 
-        return $fila['PVP'];
-    }*/
+        $sqlSelect = "SELECT * from preguntas";
+
+        $arrayPreguntas = $conn->query($sqlSelect);
+
+        return $pregunta;
+    }
 }
 
 ?>
