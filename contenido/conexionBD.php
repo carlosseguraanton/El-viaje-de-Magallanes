@@ -1,27 +1,25 @@
 <?php
 
-abstract class Conexion {
+abstract class conexionDB {
 
-    public static function Conectar() {
-        
-        try {
+	private static $server = 'localhost';
+	private static $db = 'VIAJE';
+	private static $user = 'conchi';
+	private static $password = 'conchi';
+	private static $port = 3306;
 
-            $conn = new PDO('mysql:host=localhost;dbname=VIAJE', 'juego', 'juego');
-        
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        } catch (PDOException $e) {
-
-            print "¡Error al conectar!: " . $e->getMessage() . "<br/>";
-        
-            die();
+	public static function connectDB() {
+		try {
+			$connection = new PDO("mysql:host=".self::$server.";dbname=".self::$db.";port=".self::$port.";charset=utf8", self::$user, self::$password);
+		} catch (PDOException $e) {
+			echo "No se ha podido establecer conexión con el servidor de bases de datos.<br>";
             
-        }
+			die ("Error: " . $e->getMessage());
+		}
         
-        return $conn;
-        
-    }
-
+		return $connection;
+	}
+    
 }
 
 ?>
