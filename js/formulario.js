@@ -31,10 +31,6 @@
 			console.log('Falto validar los Input');
 
 			e.preventDefault();
-		} else {
-			console.log('Envia');
-			
-			e.preventDefault();
 		}
 	};
 
