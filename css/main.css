@@ -1,0 +1,258 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+/* Paleta de colores */
+/* Azul fondo #68A7DD */
+
+
+/* Visualización correcta en dispositivos móviles */
+@media screen and (max-width: 400px) {
+
+	.barco1, .barco2, .barco3, .barco4, .barco5 {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: black;
+		position: absolute;
+		opacity: .25;
+	}
+	
+	.barco1 {
+		top: 90px;
+    	left: 100px;
+	}
+	
+	.barco2 {
+		top: 110px;
+    	left: 20px;
+	}
+	
+	.barco3 {
+		top: 90px;
+		left: 290px;
+	}
+	
+	.barco4 {
+		top: 120px;
+    	left: 205px;
+	}
+	
+	.barco5 {
+		top: 40px;
+		left: 120px;
+	}
+
+}
+
+/* Visualización correcta en mi dispositivo móvil */
+@media screen and (max-width: 1280px) {
+
+	.barco1, .barco2, .barco3, .barco4, .barco5 {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: black;
+		position: absolute;
+		opacity: .25;
+	}
+	
+	.barco1 {
+		top: 90px;
+    	left: 100px;
+	}
+	
+	.barco2 {
+		top: 110px;
+    	left: 20px;
+	}
+	
+	.barco3 {
+		top: 90px;
+		left: 290px;
+	}
+	
+	.barco4 {
+		top: 120px;
+    	left: 205px;
+	}
+	
+	.barco5 {
+		top: 40px;
+		left: 120px;
+	}
+
+}
+
+/* Visualización correcta en el dispositivo de casa */
+@media screen and (max-width: 1366px) {
+
+	.barco1, .barco2, .barco3, .barco4, .barco5 {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background-color: black;
+		position: absolute;
+		opacity: .25;
+	}
+
+	.barco1 {
+		top: 410px;
+		left: 450px;
+	}
+	
+	.barco2 {
+		top: 520px;
+		left: 160px;
+	}
+	
+	.barco3 {
+		top: 410px;
+		left: 1100px;
+	}
+	
+	.barco4 {
+		top: 500px;
+		left: 840px;
+	}
+	
+	.barco5 {
+		top: 215px;
+		left: 460px;
+	}
+	
+	.barco1:hover {
+		top: calc(410px - 25px);
+		left: calc(450px - 25px);
+	}
+	
+	.barco2:hover {
+		top: calc(520px - 25px);
+		left: calc(160px - 25px);
+	}
+	
+	.barco3:hover {
+		top: calc(410px - 25px);
+		left: calc(1100px - 25px);
+	}
+	
+	.barco4:hover {
+		top: calc(500px - 25px);
+		left: calc(840px - 25px);
+	}
+
+	.barco5:hover {
+		top: calc(215px - 25px);
+		left: calc(460px - 25px);
+	}
+
+	.barco1:hover, .barco2:hover, .barco3:hover, .barco4:hover, .barco5:hover {
+		opacity: .1;
+		cursor: pointer;
+		width: 150px;
+		height: 150px;
+	}
+
+}
+
+/* Visualización correcta en el dispositivo de clase */
+@media screen and (min-width: 1367px) {
+
+	.barco1, .barco2, .barco3, .barco4, .barco5 {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background-color: black;
+		position: absolute;
+		opacity: .25;
+	}
+	
+	.barco1 {
+		top: 600px;
+		left: 660px;
+	}
+	
+	.barco2 {
+		top: 750px;
+		left: 250px;
+	}
+	
+	.barco3 {
+		top: 590px;
+		left: 1585px;
+	}
+	
+	.barco4 {
+		top: 725px;
+		left: 1200px;
+	}
+	
+	.barco5 {
+		top: 310px;
+		left: 675px;
+	}
+	
+	.barco1:hover {
+		top: calc(600px - 25px);
+		left: calc(660px - 25px);
+	}
+	
+	.barco2:hover {
+		top: calc(750px - 25px);
+		left: calc(250px - 25px);
+	}
+	
+	.barco3:hover {
+		top: calc(590px - 25px);
+		left: calc(1585px - 25px);
+	}
+	
+	.barco4:hover {
+		top: calc(725px - 25px);
+		left: calc(1200px - 25px);
+	}
+
+	.barco5:hover {
+		top: calc(310px - 25px);
+		left: calc(675px - 25px);
+
+	}
+
+	.barco1:hover, .barco2:hover, .barco3:hover, .barco4:hover, .barco5:hover {
+		opacity: .1;
+		cursor: pointer;
+		width: 150px;
+		height: 150px;
+	}
+	
+}
+
+.divImg img {
+	width: 100%;
+	/*height: 100vh;
+	background: url('./../img/juego.png');
+	background-size: 100%;
+	background-repeat: no-repeat;*/
+}
+
+.pregunta1, .pregunta2, .pregunta3, .pregunta4, .pregunta5 {
+	width: calc(100vw - 80px);
+	height: calc(100vh - 80px);
+	margin: 20px;
+	border-radius: 0%;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	background-color: black;
+	opacity: .75;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	font-size: 28px;
+	box-sizing: border-box;
+}
+
+
+
+
