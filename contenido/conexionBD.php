@@ -1,6 +1,6 @@
 <?php
 
-abstract class conexionDB {
+abstract class conexionBD {
 
 	private static $server = 'localhost';
 	private static $db = 'VIAJE';
@@ -8,7 +8,7 @@ abstract class conexionDB {
 	private static $password = 'conchi';
 	private static $port = 3306;
 
-	public static function connectDB() {
+	public static function connect() {
 		try {
 			$connection = new PDO("mysql:host=".self::$server.";dbname=".self::$db.";port=".self::$port.";charset=utf8", self::$user, self::$password);
 		} catch (PDOException $e) {
