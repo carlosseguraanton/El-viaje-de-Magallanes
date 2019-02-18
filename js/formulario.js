@@ -1,12 +1,12 @@
-// Recorrer los elementos y hacer que onchange ejecute una funcion para comprobar el valor de ese input
-(function(){
-
+window.onload = function() {
+	
 	var formulario = document.formulario_registro;
 	var	elementos = formulario.elements;
-
+	
 	// Funcion que se ejecuta cuando el evento click es activado
-
+	
 	var esInputCorrecto = function() {
+		// Recorrer los elementos y hacer que onchange ejecute una funcion para comprobar el valor de ese input
 		for (var i = 0; i < elementos.length; i++) {
 			// Identificamos si el elemento es de tipo texto, email, password, radio o checkbox
 			if (elementos[i].type == "text") {
@@ -38,6 +38,8 @@
 
 			//---------------------------------------------------------//
 
+			alert("No has introducido datos en el campo nombre o curso");
+
 			e.preventDefault();
 		}
 	};
@@ -65,4 +67,37 @@
 		}
 	}
 
-}())
+	
+	//--------------------------------- Se enviarán los datos por Ajax ---------------------------------//
+	$("button").click(function () {
+
+		var nombre = $("#nombre").val();
+		var edad = $("#curso").val();
+
+		$.post("texto.php", { nombre: nombre, curso: curso }, function (respuesta) {
+
+			for (var i = 0; i < respuesta.length; i++) {
+
+				var nombre = $("<p>");
+				nombre.text(respuesta[i]['nombre']);
+
+				// $("#div").append(nombre);
+
+				for (var j = 0; j < respuesta[i]['jugadores'].length; j++) {
+
+					var jugadores = $("<p>");
+					jugadores.text(respuesta[i]['jugadores'][j]);
+
+					$("#div").append(jugadores);
+
+				}
+
+			}
+
+		}, "json");
+
+	});
+	//------------------------------------------------------------------------------------------//
+
+
+};
