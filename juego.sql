@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.25, for Linux (x86_64)
 --
--- Host: localhost    Database: JUEGO
+-- Host: localhost    Database: VIAJE
 -- ------------------------------------------------------
 -- Server version	5.7.25-0ubuntu0.18.04.2
 
@@ -50,12 +50,12 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `usuario` (
+  `codigo` int(2) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) NOT NULL,
   `curso` varchar(10) NOT NULL,
   `puntuacion` int(4) DEFAULT NULL,
-  `id` int(2) NOT NULL,
-  PRIMARY KEY (`nombre`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`codigo`,`nombre`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('pedro','2DAW',500,0);
+INSERT INTO `usuario` VALUES (2,'carlos','2DAW',500),(1,'pedro','2DAW',500);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -77,4 +77,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-19  8:44:58
+-- Dump completed on 2019-02-19  9:21:13
