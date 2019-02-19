@@ -25,12 +25,12 @@
 
 error_reporting(E_ALL);
 
-require_once '../Model/Usuario.php';
+require_once './Usuario.php';
 
 // Obtiene todos los usuarios
 $data['usuarios'] = Usuario::getUsuarios();
 
 // Carga la vista de listado
-include '../View/ListUsuarios.php';
+include './ListUsuarios.php';
 
 ?>
