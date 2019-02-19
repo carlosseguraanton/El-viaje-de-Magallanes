@@ -1,6 +1,6 @@
 <?php
 
-require_once 'conexionDB.php';
+require_once 'conexionBD.php';
 
 class Usuario {
 
@@ -40,13 +40,13 @@ class Usuario {
     $conexion->exec($sqlInsert);
   }
 
-  public function updateUsuario($puntuacion) {
+  /*public function updatePuntuacionUsuario($puntuacion) {
     $conexion = conexionBD::connect();
 
     $sqlUpdate = "UPDATE usuario SET puntuacion = $puntuacion WHERE codigo = \"" . $this->codigo . "\"";
 
     $conexion->exec($sqlUpdate);
-  }
+  }*/
 
   public static function getUsuario($codigo) {
     $conexion = conexionBD::connect();
@@ -62,7 +62,7 @@ class Usuario {
     return $usuario;    
   }
 
-  public static function getUuarios() {
+  public static function getUsuarios() {
     $conexion = conexionBD::connect();
 
     $sqlSelect = "SELECT codigo, nombre, curso, puntuacion FROM usuario";
