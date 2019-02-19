@@ -43,4 +43,4 @@ CREATE TABLE 'usuario' (
 
 LOCK TABLES 'usuario' WRITE;
 /*!40000 ALTER TABLE 'usuario' DISABLE KEYS */;
-INSERT INTO 'usuario' VALUES ('carlos','2DAW',500), ('pedro','2DAW',500), ('conchi','2DAW',500);
+INSERT INTO 'usuario' VALUES ('carlos','2DAW', 500), ('pedro','2DAW', 500), ('conchi','2DAW', 500);
