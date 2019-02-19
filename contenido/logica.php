@@ -5,6 +5,7 @@ include 'conexionBD.php';
 $nombre = $_POST['nombre'];
 $curso = $_POST['curso'];
 
+// ------------------------------------------------ //
 $array_futbol = array(
 
     [
@@ -20,10 +21,12 @@ $array_futbol = array(
     ]
 
 );
+// ------------------------------------------------ //
+
 
 class Juego {
 
-    public static function insertNombre($nombre, $curso) {
+    public static function insertUsuario($nombre, $curso) {
         $conn = ConexionBD::Conectar();
         
         $sqlSelect = "SELECT nombre from usuario where nombre = '$nombre'";
@@ -35,7 +38,7 @@ class Juego {
         if ($fila == 1) {
             echo 'Ya existe este usuario';
         } else {
-            $sqlInsert = "INSERT into usuario (nombre, curso) values ('$nombre', '$curso', 500)";
+            $sqlInsert = "INSERT into usuario (nombre, curso, puntuacion) values ('$nombre', '$curso', 500)";
 
             if ($conn->query($sqlInsert) === true) {
                 
@@ -46,7 +49,7 @@ class Juego {
 
     }
 
-    public static function obtenerPreguntaCompleta($nombre, $curso) {
+    public static function obtenerPreguntaCompleta() {
         $conn = ConexionBD::Conectar();
 
         $sqlSelect = "SELECT * from preguntas";

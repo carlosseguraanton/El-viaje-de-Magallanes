@@ -32,20 +32,34 @@ class Usuario {
     return $this->puntuacion;
   }
 
-  public function insert() {
+  public function insertUsuario() {
     $conexion = conexionBD::connect();
 
-    $sqlInsert = "INSERT INTO usuario (codigo, nombre, curso, puntuacion) VALUES (\"".$this->codigo."\", \"".$this->nombre."\", \"".$this->curso."\", \"".$this->puntuacion."\")";
+    $sqlInsert = "INSERT INTO usuario (codigo, nombre, curso, puntuacion) VALUES (\"" . $this->codigo . "\", \"" . $this->nombre . "\", \"" . $this->curso . "\", \"" . $this->puntuacion . "\")";
     
     $conexion->exec($sqlInsert);
   }
 
-  public function delete() {
+  public function deleteUsuario() {
     $conexion = conexionBD::connect();
 
-    $sqlDelete = "DELETE FROM usuario WHERE codigo=\"".$this->codigo."\"";
+    $sqlDelete = "DELETE FROM usuario WHERE codigo=\"" . $this->codigo . "\"";
 
     $conexion->exec($sqlDelete);
+  }
+
+  public static function getUsuario($codigo) {
+    $conexion = conexionBD::connect();
+
+    $sqlSelect = "SELECT codigo, nombre, curso, puntuacion FROM usuario WHERE codigo=\"" . $codigo . "\"";
+    
+    $consulta = $conexion->query($sqlSelect);
+    
+    $registro = $consulta->fetchObject();
+    
+    $usuario = new Usuario($registro->codigo, $registro->nombre, $registro->curso, $registro->puntuacion);
+    
+    return $usuario;    
   }
 
   public static function getUuarios() {
@@ -62,20 +76,6 @@ class Usuario {
     }
     
     return $arrayUsuarios;    
-  }
-
-  public static function getPlayersById($id) {
-    $conexion = conexionBD::connect();
-
-    $sqlSelect = "SELECT codigo, nombre, curso, puntuacion FROM usuario WHERE codigo=\"".$codigo."\"";
-    
-    $consulta = $conexion->query($sqlSelect);
-    
-    $registro = $consulta->fetchObject();
-    
-    $usuario = new Usuario($registro->codigo, $registro->nombre, $registro->curso, $registro->puntuacion);
-    
-    return $usuario;    
   }
 
 }
