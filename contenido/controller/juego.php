@@ -23,19 +23,26 @@
 
 <?php
 
-error_reporting(E_ALL);
+    error_reporting(E_ALL);
 
-include './../model/Usuario.php';
+    include './../model/Usuario.php';
 
 
-// ---------------------- Aquí va toda la lógica --------------------------- //
+    // ---------------------- Aquí va toda la lógica --------------------------- //
 
-// Obtiene todos los usuarios
-$data['usuarios'] = Usuario::getUsuarios();
+    // Obtiene todos los usuarios
+    $data['usuarios'] = Usuario::getUsuarios();
 
-// ------------------------------------------------- //
+    $nombre = $_POST['nombre'];
+    $curso = $_POST['curso'];
 
-// Carga la vista de listado
-include './../view/ListUsuarios.php';
+    $usuario = new Usuario($nombre, $curso);
+
+    $usuario->insertUsuario();
+
+    // ------------------------------------------------- //
+
+    // Carga la vista de listado
+    include './../view/ListUsuarios.php';
 
 ?>

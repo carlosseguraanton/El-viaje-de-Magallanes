@@ -4,20 +4,13 @@ require_once 'conexionBD.php';
 
 class Usuario {
 
-  private $codigo;
   private $nombre;
   private $curso;
-  private $puntuacion;
+  private $puntuacion = 500;
 
-  function __construct($codigo, $nombre, $curso, $puntuacion) {
-    $this->codigo = $codigo;
+  function __construct($nombre, $curso) {
     $this->nombre = $nombre;
     $this->curso = $curso;
-    $this->puntuacion = $puntuacion;
-  }
-
-  public function getCodigo() {
-    return $this->codigo;
   }
 
   public function getNombre() {
@@ -35,7 +28,7 @@ class Usuario {
   public function insertUsuario() {
     $conexion = conexionBD::connect();
 
-    $sqlInsert = "INSERT INTO usuario (codigo, nombre, curso, puntuacion) VALUES (\"" . $this->codigo . "\", \"" . $this->nombre . "\", \"" . $this->curso . "\", \"" . $this->puntuacion . "\")";
+    $sqlInsert = "INSERT INTO usuario (nombre, curso, puntuacion) VALUES (\"" . $this->nombre . "\", \"" . $this->curso . "\", \"" . $this->puntuacion . "\")";
     
     $conexion->exec($sqlInsert);
   }
@@ -65,7 +58,7 @@ class Usuario {
   public static function getUsuarios() {
     $conexion = conexionBD::connect();
 
-    $sqlSelect = "SELECT codigo, nombre, curso, puntuacion FROM usuario";
+    $sqlSelect = "SELECT codigo, nombre, curso, puntuacion FROM usuario order by puntuacion";
     
     $consulta = $conexion->query($sqlSelect);
 

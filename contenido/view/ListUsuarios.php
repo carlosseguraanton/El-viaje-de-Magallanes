@@ -5,23 +5,36 @@
     <title>Usuarios</title>
   </head>
   <body>
-    <h1>Usuarios</h1>
-    <a href="../Controller/newUsuario.php">New Usuario</a>
+
+    <h1>Ranking de puntuaciones</h1>
     <hr>
+
     <?php
-    foreach($data['usuarios'] as $usuario)  {
+      foreach($data['usuarios'] as $usuario) {
     ?>
+
     <table>
       <tr>
-        <th>Usuario</th><th>Puntuacion</th>
+        <th>Usuario</th>
+        <th>Curso</th>
+        <th>Puntuacion</th>
       </tr>
       <tr>
-        <!-- ----------------------------------- Revisar el campo curso en este fichero ----------------------------------- -->
-        <td><?=$usuario->getNombre()?></td><td><?=$usuario->getPuntuacion()?></td><td><a href="../Controller/deleteUsuario.php?codigo=<?=$usuario->getCodigo()?>">Delete user</a><
+        <td>
+          <?= $usuario->getNombre() ?>
+        </td>
+        <td>
+          <?= $usuario->getCurso() ?>
+        </td>
+        <td>
+          <?= $usuario->getPuntuacion() ?>
+        </td>
       </tr>
     </table>
+
     <?php
-     }
+      }
     ?>
+
   </body>
 </html>
