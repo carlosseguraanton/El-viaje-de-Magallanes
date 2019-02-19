@@ -19,7 +19,7 @@
             <br>
             <img src="./img/magallanes.jpg"/>
             <br>
-            <form action="./contenido/juego.php" class="formulario" name="formulario_registro" method="POST">
+            <form action="./contenido/controller/juego.php" class="formulario" name="formulario_registro" method="POST">
                 <div>
                     <div class="input-group">
                         <input type="text" id="nombre" name="nombre">
