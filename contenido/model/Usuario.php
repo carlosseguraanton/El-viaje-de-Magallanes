@@ -52,7 +52,7 @@ class Usuario {
     
     $usuario = new Usuario($registro->codigo, $registro->nombre, $registro->curso, $registro->puntuacion);
     
-    return $usuario;    
+    return $usuario;
   }
 
   public static function getUsuarios() {
@@ -68,7 +68,7 @@ class Usuario {
       $arrayUsuarios[] = new Usuario($registro->codigo, $registro->nombre, $registro->curso, $registro->puntuacion);
     }
     
-    return $arrayUsuarios;    
+    return $arrayUsuarios;
   }
 
 }
