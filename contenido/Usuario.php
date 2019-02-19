@@ -40,18 +40,18 @@ class Usuario {
     $conexion->exec($sqlInsert);
   }
 
-  public function deleteUsuario() {
+  public function updateUsuario($puntuacion) {
     $conexion = conexionBD::connect();
 
-    $sqlDelete = "DELETE FROM usuario WHERE codigo=\"" . $this->codigo . "\"";
+    $sqlUpdate = "UPDATE usuario SET puntuacion = $puntuacion WHERE codigo = \"" . $this->codigo . "\"";
 
-    $conexion->exec($sqlDelete);
+    $conexion->exec($sqlUpdate);
   }
 
   public static function getUsuario($codigo) {
     $conexion = conexionBD::connect();
 
-    $sqlSelect = "SELECT codigo, nombre, curso, puntuacion FROM usuario WHERE codigo=\"" . $codigo . "\"";
+    $sqlSelect = "SELECT codigo, nombre, curso, puntuacion FROM usuario WHERE codigo = \"" . $codigo . "\"";
     
     $consulta = $conexion->query($sqlSelect);
     

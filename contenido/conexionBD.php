@@ -10,7 +10,7 @@ abstract class conexionBD {
 
 	public static function connect() {
 		try {
-			$connection = new PDO("mysql:host=".self::$server.";dbname=".self::$db.";port=".self::$port.";charset=utf8", self::$user, self::$password);
+			$connection = new PDO("mysql:host=" . self::$server.";dbname=" . self::$db.";port=" . self::$port . ";charset=utf8", self::$user, self::$password);
 		} catch (PDOException $e) {
 			echo "No se ha podido establecer conexión con el servidor de bases de datos.<br>";
             
