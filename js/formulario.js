@@ -69,30 +69,19 @@ window.onload = function() {
 
 	
 	//--------------------------------- Se enviarán los datos por Ajax ---------------------------------//
-	$("button").click(function () {
+	$("input[type='submit']").click(function () {
 
 		var nombre = $("#nombre").val();
-		var edad = $("#curso").val();
+		var curso = $("#curso").val();
 
-		$.post("texto.php", { nombre: nombre, curso: curso }, function (respuesta) {
+		$.post("juego.php", { nombre: nombre, curso: curso }, function (respuesta) {
 
-			for (var i = 0; i < respuesta.length; i++) {
+			// Tratamos de mostrar el nombre en el body del documento juego.php
 
-				var nombre = $("<p>");
-				nombre.text(respuesta[i]['nombre']);
+			var nombre = $("<p>");
+			nombre.text(respuesta[i]['nombre']);
 
-				// $("#div").append(nombre);
-
-				for (var j = 0; j < respuesta[i]['jugadores'].length; j++) {
-
-					var jugadores = $("<p>");
-					jugadores.text(respuesta[i]['jugadores'][j]);
-
-					$("#div").append(jugadores);
-
-				}
-
-			}
+			$("body").append(nombre);
 
 		}, "json");
 
