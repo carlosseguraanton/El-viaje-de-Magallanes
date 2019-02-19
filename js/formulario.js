@@ -79,7 +79,7 @@ window.onload = function() {
 			// Tratamos de mostrar el nombre en el body del documento juego.php
 
 			var nombre = $("<p>");
-			nombre.text(respuesta[i]['nombre']);
+			nombre.text(respuesta['nombre']);
 
 			$("body").append(nombre);
 
