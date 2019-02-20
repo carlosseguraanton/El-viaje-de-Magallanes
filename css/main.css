@@ -257,11 +257,7 @@ p {
 	display: none;
 }
 
-/*input[type="radio"], input[type="button"] {
-	display: none;
-}*/
-
-input[type="button"] {
+input[type="submit"] {
 	background: black;
 	border-radius: 1px;
 	border: 2px solid #f2f2f2;
@@ -280,6 +276,9 @@ input[type="button"] {
   }
 
 .respuesta1, .respuesta2, .respuesta3, .respuesta4, .respuesta5 {
-	/*display: none;*/
+	display: none;
 }
 
+.claseNueva {
+	display: block;
+}

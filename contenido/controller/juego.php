@@ -24,7 +24,8 @@
         
             $br = "<br>";
         
-            for ($i = 1; $i <= 5; $i++) { 
+            for ($i = 1; $i <= 5; $i++) {
+
                 echo "<div class='circulo" . $i . "'>";
 
                     $pregunta = Pregunta::getPreguntaByCod($i);
@@ -40,16 +41,24 @@
 
                         echo $br;
                         echo $br;
-                        echo "<input type='radio' value='" . $respuestac . "'name='respuesta" . $i . "'>" . $respuestac . "</input>" . $br . $br;
-                        echo "<input type='radio' value='" . $respuesta1 . "'name='respuesta" . $i . "'>" . $respuesta1 . "</input>" . $br . $br;
-                        echo "<input type='radio' value='" . $respuesta2 . "'name='respuesta" . $i . "'>" . $respuesta2 . "</input>" . $br . $br;
-                        echo "<input type='radio' value='" . $respuesta3 . "'name='respuesta" . $i . "'>" . $respuesta3 . "</input>" . $br . $br;
-                        echo $br;
-                        echo "<input type='button' value='Validar Respuesta'name='validar'</input>";
+
+                        echo "<form action='./../contenido/controller/juego.php' method='POST'>";
+
+                            echo "<input type='radio' value='" . $respuestac . "'name='respuesta" . $i . "'>" . $respuestac . "</input>" . $br . $br;
+                            echo "<input type='radio' value='" . $respuesta1 . "'name='respuesta" . $i . "'>" . $respuesta1 . "</input>" . $br . $br;
+                            echo "<input type='radio' value='" . $respuesta2 . "'name='respuesta" . $i . "'>" . $respuesta2 . "</input>" . $br . $br;
+                            echo "<input type='radio' value='" . $respuesta3 . "'name='respuesta" . $i . "'>" . $respuesta3 . "</input>" . $br . $br;
+                            
+                            echo $br;
+
+                            echo "<input type='submit' value='Validar Respuesta' name='validar'</input>";
+
+                        echo "</form>";
                     
                     echo "</div>";
 
                 echo "</div>";
+
             }
 
 

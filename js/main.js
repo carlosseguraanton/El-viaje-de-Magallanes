@@ -11,7 +11,9 @@ function main() {
 			
 			divPregunta.addClass( "pregunta" + [index] );
 			
-			divPregunta.html( "Pregunta " + [index] + "<br><br>" + $( this ).contents().filter("p").text() );
+			divPregunta.html( "Pregunta " + [index] + "<br><br>" + $( this ).contents().filter( "p" ).text() );
+
+			$( this ).contents().filter( "div" ).addClass("claseNueva");
 
 			var divRespuestas = $( ".respuesta" + [index] );
 
