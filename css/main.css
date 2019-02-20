@@ -253,9 +253,31 @@
 	box-sizing: border-box;
 }
 
-p, input[type="radio"], input[type="button"] {
+p {
 	display: none;
 }
+
+/*input[type="radio"], input[type="button"] {
+	display: none;
+}*/
+
+input[type="button"] {
+	background: black;
+	border-radius: 1px;
+	border: 2px solid #f2f2f2;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: "Roboto";
+	font-size: 16px;
+	padding: 15px;
+	width: 100%;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	text-align: center;
+	text-decoration: none;
+  }
 
 .respuesta1, .respuesta2, .respuesta3, .respuesta4, .respuesta5 {
 	/*display: none;*/
