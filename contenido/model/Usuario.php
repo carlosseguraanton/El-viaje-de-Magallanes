@@ -6,7 +6,7 @@ class Usuario {
 
   private $nombre;
   private $curso;
-  private $puntuacion = 500;
+  private $puntuacion;
 
   function __construct($nombre, $curso) {
     $this->nombre = $nombre;
