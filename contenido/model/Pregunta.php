@@ -3,19 +3,24 @@
 require_once 'conexionBD.php';
 
 class Pregunta {
-
+  private $codigo;
   private $pregunta;
   private $respuestac;
   private $respuesta1;
   private $respuesta2;
   private $respuesta3;
 
-  function __construct($pregunta, $respuestac, $respuesta1, $respuesta2, $respuesta3) {
+  function __construct($codigo, $pregunta, $respuestac, $respuesta1, $respuesta2, $respuesta3) {
+    $this->codigo = $codigo;
     $this->pregunta = $pregunta;
     $this->respuestac = $respuestac;
     $this->respuesta1 = $respuesta1;
     $this->respuesta2 = $respuesta2;
     $this->respuesta3 = $respuesta3;
+  }
+
+  public function getCodigo() {
+    return $this->codigo;
   }
 
   public function getPregunta() {
@@ -38,7 +43,7 @@ class Pregunta {
     return $this->respuesta3;
   }
 
-  public static function getPregunta($codigo) {
+  public static function getPreguntaByCod($codigo) {
     $conexion = conexionBD::connect();
 
     $sqlSelect = "SELECT codigo, pregunta, respuestac, respuesta1, respuesta2, respuesta3 FROM preguntas WHERE codigo = \"" . $codigo . "\"";
