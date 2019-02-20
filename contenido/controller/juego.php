@@ -13,7 +13,14 @@
         <div class="divImg">
             <img src="./../../img/juego.png">
         </div>
-        <div class="barco1"></div>
+        <div class="barco1">
+            <?php
+                include './../model/Pregunta.php';
+                $pregunta = Pregunta::getPreguntaByCod(1);
+
+                echo $pregunta->getPregunta();
+            ?>
+        </div>
         <div class="barco2"></div>
         <div class="barco3"></div>
         <div class="barco4"></div>
@@ -27,7 +34,6 @@
 
     include './../model/Usuario.php';
 
-
     // ---------------------- Aquí va toda la lógica --------------------------- //
 
     // Obtiene todos los usuarios
@@ -39,6 +45,7 @@
     $usuario = new Usuario($nombre, $curso);
 
     $usuario->insertUsuario();
+    
 
     // ------------------------------------------------- //
 
