@@ -41,6 +41,6 @@ CREATE TABLE usuario (
   codigo int(2) NOT NULL AUTO_INCREMENT,
   nombre varchar(20) NOT NULL,
   curso varchar(10) NOT NULL,
-  puntuacion int(4) DEFAULT NULL,
+  puntuacion int(4) DEFAULT 0,
   PRIMARY KEY (codigo,nombre)
 );
