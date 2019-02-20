@@ -11,7 +11,11 @@ function main() {
 			
 			divPregunta.addClass( "pregunta" + [index] );
 			
-			divPregunta.html( "Pregunta " + [index] + "<br>" + $( this ).text() );
+			divPregunta.html( "Pregunta " + [index] + "<br><br>" + $( this ).text() );
+
+			var divRespuestas = $( ".respuesta" + [index] );
+
+			divPregunta.append( divRespuestas );
 			
 			$( "body" ).append( divPregunta );
 			
@@ -64,6 +68,13 @@ function main() {
 
 
 
+
+
+
+
+
+
+// var br = $( "<br>" );
 
 
 

@@ -25,12 +25,22 @@
             for ($i = 1; $i <= 5; $i++) { 
                 echo "<div class='barco" . $i . "'>";
 
-                    $pregunta = Pregunta::getPreguntaByCod($i);
+                $pregunta = Pregunta::getPreguntaByCod($i);
 
-                    echo "<p>" . $pregunta->getPregunta() . "</p>";
+                echo "<p>" . $pregunta->getPregunta() . "</p>";
+
+                echo "<div class='respuesta" . $i . "'>";
+                
+                echo "<input type='radio' value='" . $pregunta->getRespuestac() .  "name='" . $pregunta->getRespuestac() . "'></input>";
+                echo "<input type='radio' value='" . $pregunta->getRespuesta1() . "'></input>";
+                echo "<input type='radio' value='" . $pregunta->getRespuesta2() . "'></input>";
+                echo "<input type='radio' value='" . $pregunta->getRespuesta3() . "'></input>";
+                
+                echo "</div>";
 
                 echo "</div>";
             }
+
 
         ?>
     </body>
@@ -44,10 +54,6 @@
 
     error_reporting(E_ALL);
 
-
-    // ---------------------- Aquí va toda la lógica --------------------------- //
-
-    // Obtiene todos los usuarios
     $data['usuarios'] = Usuario::getUsuarios();
 
     $nombre = $_POST['nombre'];
@@ -57,10 +63,6 @@
 
     $usuario->insertUsuario();
     
-
-    // ------------------------------------------------- //
-
-    // Carga la vista de listado
     // include './../view/ListUsuarios.php';
 
 ?>
