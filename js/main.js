@@ -5,7 +5,7 @@ function main() {
 	
 	for (let index = 1; index <= 5; index++) {
 		
-		$( ".barco" + [index] ).click(function () {
+		$( ".circulo" + [index] ).click(function () {
 
 			var divPregunta = $( "<div>" );
 			

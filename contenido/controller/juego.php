@@ -23,20 +23,36 @@
         <?php
         
             for ($i = 1; $i <= 5; $i++) { 
-                echo "<div class='barco" . $i . "'>";
+                echo "<div class='circulo" . $i . "'>";
 
-                $pregunta = Pregunta::getPreguntaByCod($i);
+                    $pregunta = Pregunta::getPreguntaByCod($i);
 
-                echo "<p>" . $pregunta->getPregunta() . "</p>";
+                    echo "<p>" . $pregunta->getPregunta() . "</p>";
 
-                echo "<div class='respuesta" . $i . "'>";
-                
-                echo "<input type='radio' value='" . $pregunta->getRespuestac() .  "name='" . $pregunta->getRespuestac() . "'></input>";
-                echo "<input type='radio' value='" . $pregunta->getRespuesta1() . "'></input>";
-                echo "<input type='radio' value='" . $pregunta->getRespuesta2() . "'></input>";
-                echo "<input type='radio' value='" . $pregunta->getRespuesta3() . "'></input>";
-                
-                echo "</div>";
+                    echo "<div class='respuesta" . $i . "'>";
+
+                        $respuestac = $pregunta->getRespuestac();
+                        $respuesta1 = $pregunta->getRespuesta1();
+                        $respuesta2 = $pregunta->getRespuesta2();
+                        $respuesta3 = $pregunta->getRespuesta3();
+                    
+                        echo "<br>";
+                        echo "<input type='radio' value='" . $respuestac . "'name='respuesta" . $i . "'>" . $respuestac . "</input>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<input type='radio' value='" . $respuesta1 . "'name='respuesta" . $i . "'>" . $respuesta1 . "</input>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<input type='radio' value='" . $respuesta2 . "'name='respuesta" . $i . "'>" . $respuesta2 . "</input>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<input type='radio' value='" . $respuesta3 . "'name='respuesta" . $i . "'>" . $respuesta3 . "</input>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<input type='button' value='Validar Respuesta'name='validar'</input>";
+                    
+                    echo "</div>";
 
                 echo "</div>";
             }
