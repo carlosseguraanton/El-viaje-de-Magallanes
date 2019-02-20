@@ -58,14 +58,14 @@ class Usuario {
   public static function getUsuarios() {
     $conexion = conexionBD::connect();
 
-    $sqlSelect = "SELECT codigo, nombre, curso, puntuacion FROM usuario order by puntuacion";
+    $sqlSelect = "SELECT nombre, curso, puntuacion FROM usuario order by puntuacion";
     
     $consulta = $conexion->query($sqlSelect);
 
     $arrayUsuarios = [];
 
     while ($registro = $consulta->fetchObject()) {
-      $arrayUsuarios[] = new Usuario($registro->codigo, $registro->nombre, $registro->curso, $registro->puntuacion);
+      $arrayUsuarios[] = new Usuario($registro->nombre, $registro->curso, $registro->puntuacion);
     }
     
     return $arrayUsuarios;
