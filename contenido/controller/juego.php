@@ -43,6 +43,6 @@
     // ------------------------------------------------- //
 
     // Carga la vista de listado
-    include './../view/ListUsuarios.php';
+    //include './../view/ListUsuarios.php';
 
 ?>
