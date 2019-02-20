@@ -1,3 +1,10 @@
+<?php
+
+    include './../model/Usuario.php';
+    include './../model/Pregunta.php';
+
+?>
+
 <html>
     <head>
         <meta charset="UTF-8"/>
@@ -13,26 +20,30 @@
         <div class="divImg">
             <img src="./../../img/juego.png">
         </div>
-        <div class="barco1">
-            <?php
-                include './../model/Pregunta.php';
-                $pregunta = Pregunta::getPreguntaByCod(1);
+        <?php
+        
+            for ($i = 1; $i <= 5; $i++) { 
+                echo "<div class='barco" . $i . "'>";
 
-                echo $pregunta->getPregunta();
-            ?>
-        </div>
-        <div class="barco2"></div>
-        <div class="barco3"></div>
-        <div class="barco4"></div>
-        <div class="barco5"></div>
+                    $pregunta = Pregunta::getPreguntaByCod($i);
+
+                    echo "<p>" . $pregunta->getPregunta() . "</p>";
+
+                echo "</div>";
+            }
+
+        ?>
     </body>
 </html>
+
+
+
+
 
 <?php
 
     error_reporting(E_ALL);
 
-    include './../model/Usuario.php';
 
     // ---------------------- Aquí va toda la lógica --------------------------- //
 
@@ -50,6 +61,6 @@
     // ------------------------------------------------- //
 
     // Carga la vista de listado
-    //include './../view/ListUsuarios.php';
+    // include './../view/ListUsuarios.php';
 
 ?>

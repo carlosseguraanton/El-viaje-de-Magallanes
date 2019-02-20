@@ -3,6 +3,7 @@
 require_once 'conexionBD.php';
 
 class Pregunta {
+  
   private $codigo;
   private $pregunta;
   private $respuestac;

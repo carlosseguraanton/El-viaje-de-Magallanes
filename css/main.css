@@ -253,6 +253,8 @@
 	box-sizing: border-box;
 }
 
-
+p {
+	display: none;
+}
 
 
