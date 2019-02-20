@@ -16,7 +16,6 @@ CREATE TABLE preguntas (
   PRIMARY KEY (codigo)
 );
 
-LOCK TABLES preguntas WRITE;
 INSERT INTO preguntas VALUES (1, 'Archipiélago descubierto en el oceano pacifico', 'Islas marianas', 'Islas Reunión', 'Guam', 'Puerto Rico');
 INSERT INTO preguntas VALUES (2, 'Capital de España durante el reinado de Carlos I', 'Valladolid', 'Toledo', 'Madrid', 'Salamanca');
 INSERT INTO preguntas VALUES (3, 'Capitán que relevó a Fernando de Magallanes tras su muerte', 'Juan Sebatián Elcano', 'Juan de Cartagena', 'Gaspar de Quesada', 'Juan Serrano');
