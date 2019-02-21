@@ -42,8 +42,6 @@
 
                     echo "<p>" . $pregunta->getPregunta() . "</p>";
 
-                    echo "<div class='respuesta" . $i . "'>";
-
                         $respuestac = $pregunta->getRespuestac();
                         $respuesta1 = $pregunta->getRespuesta1();
                         $respuesta2 = $pregunta->getRespuesta2();
@@ -52,7 +50,7 @@
                         echo $br;
                         echo $br;
 
-                        echo "<form action='./juego.php' method='POST'>";
+                        echo "<form class='respuesta" . $i . "' action='./juego.php' method='POST'>";
 
                             echo "<input type='radio' value='" . $respuestac . "'name='respuesta" . $i . "'>" . $respuestac . $br . $br;
                             echo "<input type='radio' value='" . $respuesta1 . "'name='respuesta" . $i . "'>" . $respuesta1 . $br . $br;
@@ -65,8 +63,6 @@
                             echo "<input type='button' value='Validar Respuesta' name='validar'>";
 
                         echo "</form>";
-                    
-                    echo "</div>";
 
                 echo "</div>";
 

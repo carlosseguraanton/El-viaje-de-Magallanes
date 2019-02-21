@@ -10,9 +10,9 @@ function main() {
 			
 			divPregunta.addClass( "pregunta" + [ index ] );
 			
-			divPregunta.html( "Pregunta " + [ index ] + "<br><br>" + $( this ).contents().filter( "p" ).text() );
+			divPregunta.html( "Pregunta " + [ index ] + "<br><br>" + $( this ).contents().filter( "p" ).text() + "<br><br>" );
 
-			$( this ).contents().filter( "div" ).addClass( "ocultar" );
+			$( this ).contents().filter( "form" ).addClass( "mostrar" );
 
 			let divRespuestas = $( ".respuesta" + [ index ] );
 
