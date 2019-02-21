@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>Usuarios</title>
   </head>
+  
   <body>
 
     <h1>Ranking de puntuaciones</h1>
+
     <hr>
 
     <?php
@@ -14,11 +16,13 @@
     ?>
 
     <table>
+
       <tr>
         <th>Usuario</th>
         <th>Curso</th>
         <th>Puntuacion</th>
       </tr>
+      
       <tr>
         <td>
           <?= $usuario->getNombre() ?>
@@ -30,6 +34,7 @@
           <?= $usuario->getPuntuacion() ?>
         </td>
       </tr>
+
     </table>
 
     <?php

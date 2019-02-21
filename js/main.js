@@ -6,7 +6,7 @@ function main() {
 		
 		$( ".circulo" + [ index ] ).click( function () {
 
-			var divPregunta = $( "<div>" );
+			let divPregunta = $( "<div>" );
 			
 			divPregunta.addClass( "pregunta" + [ index ] );
 			
@@ -14,7 +14,7 @@ function main() {
 
 			$( this ).contents().filter( "div" ).addClass( "ocultar" );
 
-			var divRespuestas = $( ".respuesta" + [ index ] );
+			let divRespuestas = $( ".respuesta" + [ index ] );
 
 			divPregunta.append( divRespuestas );
 			
@@ -27,7 +27,7 @@ function main() {
 	// Cuándo el usuario haga click en el botón de tipo submit se enviará la respuesta seleccionada por Ajax
 	$( "input[type='button']" ).click ( function () {
 
-		var respuestaSeleccionada = $( "validar" ).val();
+		let respuestaSeleccionada = $( "validar" ).val();
 
 		$.ajax( {
 
@@ -95,20 +95,23 @@ function main() {
 
 
 
-// var br = $( "<br>" );
+
+// let br = $( "<br>" );
 
 
 
-//$("*").fadeIn("slow");
+//$( "*" ).fadeIn( "slow" );
 
 
 
 
+// $( ".circulo" + [ index ] ).on( "click", function( event ) {
 
-// $(".barco" + [index]).on("click", function(event) {
-	// divPregunta[index].fadeIn("slow");
-	// divPregunta.addClass("pregunta" + [index]).fadeIn("slow");
+	// divPregunta[ index ].fadeIn( "slow" );
+
+	// divPregunta.addClass( "pregunta" + [ index ] ).fadeIn( "slow" );
+
 // });
 
-// Queremos que el divPregunta aparezca con efecto .fadeIn("slow");
-//$("body").append(divPregunta).fadeIn("slow");
+// Queremos que el divPregunta aparezca con efecto .fadeIn( "slow" );
+//$( "body" ).append( divPregunta ).fadeIn( "slow" );
