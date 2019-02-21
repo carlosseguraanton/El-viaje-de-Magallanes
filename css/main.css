@@ -1,6 +1,6 @@
 * {
-	margin: 0px;
-	padding: 0px;
+	margin	: 0px;
+	padding	: 0px;
 }
 
 /* Paleta de colores */
@@ -11,37 +11,49 @@
 @media screen and (max-width: 400px) {
 
 	.circulo1, .circulo2, .circulo3, .circulo4, .circulo5 {
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
-		background-color: black;
-		position: absolute;
-		opacity: .25;
+
+		width				: 50px;
+		height				: 50px;
+		border-radius		: 50%;
+		background-color	: black;
+		position			: absolute;
+		opacity				: .25;
+
 	}
 	
 	.circulo1 {
-		top: 90px;
-    	left: 100px;
+
+		top		: 90px;
+		left	: 100px;
+		
 	}
 	
 	.circulo2 {
-		top: 110px;
-    	left: 20px;
+
+		top		: 110px;
+		left	: 20px;
+		
 	}
 	
 	.circulo3 {
-		top: 90px;
-		left: 290px;
+
+		top		: 90px;
+		left	: 290px;
+
 	}
 	
 	.circulo4 {
-		top: 120px;
-    	left: 205px;
+
+		top		: 120px;
+		left	: 205px;
+		
 	}
 	
 	.circulo5 {
-		top: 40px;
-		left: 120px;
+
+		top		: 40px;
+		left	: 120px;
+
 	}
 
 }
@@ -50,12 +62,14 @@
 @media screen and (max-width: 1280px) {
 
 	.circulo1, .circulo2, .circulo3, .circulo4, .circulo5 {
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
-		background-color: black;
-		position: absolute;
-		opacity: .25;
+
+		width				: 50px;
+		height				: 50px;
+		border-radius		: 50%;
+		background-color	: black;
+		position			: absolute;
+		opacity				: .25;
+
 	}
 	
 	.circulo1 {
@@ -148,10 +162,10 @@
 	}
 
 	.circulo1:hover, .circulo2:hover, .circulo3:hover, .circulo4:hover, .circulo5:hover {
-		opacity: .1;
-		cursor: pointer;
-		width: 150px;
-		height: 150px;
+		opacity	: .1;
+		cursor	: pointer;
+		width	: 150px;
+		height	: 150px;
 	}
 
 }
@@ -160,12 +174,12 @@
 @media screen and (min-width: 1367px) {
 
 	.circulo1, .circulo2, .circulo3, .circulo4, .circulo5 {
-		width: 100px;
-		height: 100px;
-		border-radius: 50%;
-		background-color: black;
-		position: absolute;
-		opacity: .25;
+		width				: 100px;
+		height				: 100px;
+		border-radius		: 50%;
+		background-color	: black;
+		position			: absolute;
+		opacity				: .25;
 	}
 	
 	.circulo1 {
@@ -220,10 +234,10 @@
 	}
 
 	.circulo1:hover, .circulo2:hover, .circulo3:hover, .circulo4:hover, .circulo5:hover {
-		opacity: .1;
-		cursor: pointer;
-		width: 150px;
-		height: 150px;
+		opacity	: .1;
+		cursor	: pointer;
+		width	: 150px;
+		height	: 150px;
 	}
 	
 }
@@ -237,48 +251,57 @@
 }
 
 .pregunta1, .pregunta2, .pregunta3, .pregunta4, .pregunta5 {
-	width: calc(100vw - 80px);
-	height: calc(100vh - 80px);
-	margin: 20px;
-	border-radius: 0%;
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	background-color: black;
-	opacity: .75;
-	color: white;
-	text-align: center;
-	padding: 20px;
-	font-size: 28px;
-	box-sizing: border-box;
+
+	width				: calc(100vw - 80px);
+	height				: calc(100vh - 80px);
+	margin				: 20px;
+	border-radius		: 0%;
+	position			: absolute;
+	top					: 20px;
+	left				: 20px;
+	background-color	: black;
+	opacity				: .75;
+	color				: white;
+	text-align			: center;
+	padding				: 20px;
+	font-size			: 28px;
+	box-sizing			: border-box;
+
 }
 
 p {
+
 	display: none;
+
 }
 
 input[type="button"] {
-	background: black;
-	border-radius: 1px;
-	border: 2px solid #f2f2f2;
-	color: #fff;
-	cursor: pointer;
-	display: inline-block;
-	font-family: "Roboto";
-	font-size: 16px;
-	padding: 15px;
-	width: 60%;
-	-webkit-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-	text-align: center;
-	text-decoration: none;
+
+	background			: black;
+	border-radius		: 1px;
+	border				: 2px solid #f2f2f2;
+	color				: #fff;
+	cursor				: pointer;
+	display				: inline-block;
+	font-family			: "Roboto";
+	font-size			: 16px;
+	padding				: 15px;
+	width				: 60%;
+	-webkit-transition	: all 0.3s ease;
+	-o-transition		: all 0.3s ease;
+	transition			: all 0.3s ease;
+	text-align			: center;
+	text-decoration		: none;
   }
 
 .respuesta1, .respuesta2, .respuesta3, .respuesta4, .respuesta5 {
+
 	display: none;
+
 }
 
 .ocultar {
+
 	display: block;
+
 }
