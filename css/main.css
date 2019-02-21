@@ -335,6 +335,12 @@
 
 }
 
+.respuesta1, .respuesta2, .respuesta3, .respuesta4, .respuesta5 {
+
+	display: none;
+	
+}
+
 p {
 
 	display: none;
@@ -358,6 +364,12 @@ input[type="button"] {
 	transition			: all 0.3s ease;
 	text-align			: center;
 	text-decoration		: none;
+
+}
+
+input[type="radio"] {
+
+	display: block;
 
 }
 

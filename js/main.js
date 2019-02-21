@@ -24,10 +24,20 @@ function main() {
 		
 	}
 
+	let respuestaSeleccionada = null;
+
+	$( "input[type='radio']" ).click( function () {
+
+		respuestaSeleccionada = $( "input:checked" ).val();
+
+		console.log(respuestaSeleccionada);
+
+	} );
+
+
+
 	// Cuándo el usuario haga click en el botón de tipo submit se enviará la respuesta seleccionada por Ajax
 	$( "input[type='button']" ).click ( function () {
-
-		let respuestaSeleccionada = $( "validar" ).val();
 
 		$.ajax( {
 

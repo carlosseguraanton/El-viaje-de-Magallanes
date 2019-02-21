@@ -3,6 +3,17 @@
     include './../model/Usuario.php';
     include './../model/Pregunta.php';
 
+    error_reporting(E_ALL);
+
+    $data['usuarios'] = Usuario::getUsuarios();
+
+    $nombre = $_POST['nombre'];
+    $curso = $_POST['curso'];
+
+    $usuario = new Usuario($nombre, $curso);
+
+    $usuario->insertUsuario();
+
 ?>
 
 <html>
@@ -32,7 +43,7 @@
 
         <?php
         
-            $br = "<br>";
+            $br2 = "<br><br>";
         
             for ( $i = 1; $i <= 5; $i++ ) {
 
@@ -42,27 +53,25 @@
 
                     echo "<p>" . $pregunta->getPregunta() . "</p>";
 
-                        $respuestac = $pregunta->getRespuestac();
-                        $respuesta1 = $pregunta->getRespuesta1();
-                        $respuesta2 = $pregunta->getRespuesta2();
-                        $respuesta3 = $pregunta->getRespuesta3();
+                    $respuestac = $pregunta->getRespuestac();
+                    $respuesta1 = $pregunta->getRespuesta1();
+                    $respuesta2 = $pregunta->getRespuesta2();
+                    $respuesta3 = $pregunta->getRespuesta3();
 
-                        echo $br;
-                        echo $br;
+                    echo $br2;
 
-                        echo "<form class='respuesta" . $i . "' action='./juego.php' method='POST'>";
+                    echo "<form class='respuesta" . $i . "' action='./juego.php' method='POST'>";
 
-                            echo "<input type='radio' value='" . $respuestac . "'name='respuesta" . $i . "'>" . $respuestac . $br . $br;
-                            echo "<input type='radio' value='" . $respuesta1 . "'name='respuesta" . $i . "'>" . $respuesta1 . $br . $br;
-                            echo "<input type='radio' value='" . $respuesta2 . "'name='respuesta" . $i . "'>" . $respuesta2 . $br . $br;
-                            echo "<input type='radio' value='" . $respuesta3 . "'name='respuesta" . $i . "'>" . $respuesta3 . $br . $br;
-                            
-                            echo $br;
-                            echo $br;
+                        echo "<input type='radio' value='" . $respuestac . "' name='respuesta" . $i . "'>" . $respuestac;
+                        echo "<input type='radio' value='" . $respuesta1 . "' name='respuesta" . $i . "'>" . $respuesta1;
+                        echo "<input type='radio' value='" . $respuesta2 . "' name='respuesta" . $i . "'>" . $respuesta2;
+                        echo "<input type='radio' value='" . $respuesta3 . "' name='respuesta" . $i . "'>" . $respuesta3;
+                        
+                        echo $br2;
 
-                            echo "<input type='button' value='Validar Respuesta' name='validar'>";
+                        echo "<input type='button' value='Validar Respuesta' name='validar'>";
 
-                        echo "</form>";
+                    echo "</form>";
 
                 echo "</div>";
 
@@ -80,16 +89,18 @@
 
 <?php
 
-    error_reporting(E_ALL);
+    $respuestaSeleccionada = $_POST['respuestaSeleccionada'];
 
-    $data['usuarios'] = Usuario::getUsuarios();
+    if ($respuestaSeleccionada === $respuestac) {
 
-    $nombre = $_POST['nombre'];
-    $curso = $_POST['curso'];
+        // Aquí habría que darle puntos al usuario.
 
-    $usuario = new Usuario($nombre, $curso);
+        echo "Has acertado";
 
-    $usuario->insertUsuario();
+    } else {
+        echo "No has acertado. La respuesta correcta es: " . $respuestac;
+    }
+
     
     // include './../view/ListUsuarios.php';
 
