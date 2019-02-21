@@ -3,9 +3,9 @@
 abstract class conexionBD {
 
 	private static $server = 'localhost';
-	private static $db = 'viaje';
-	private static $user = 'carlos';
-	private static $password = 'carlos';
+	private static $db = 'VIAJE';
+	private static $user = 'conchi';
+	private static $password = 'conchi';
 	private static $port = 3306;
 
 	public static function connect() {
