@@ -24,11 +24,29 @@ function main() {
 		});
 		
 	}
+
+	// Cuándo el usuario haga click en el botón de tipo submit se enviará la respuesta seleccionada por Ajax
+	$( "input[type='button']" ).click(function () {
+
+		var respuestaSeleccionada = $( "validar" ).val();
+
+		$.ajax({
+
+			url		: "juego.php",
+			
+			type    : "post",
+
+			data	: { respuestaSeleccionada: respuestaSeleccionada },
+
+			success	: function(data) {
+				console.log(data);
+			}
+
+		});
 	
+	});
+
 }
-
-
-
 
 
 

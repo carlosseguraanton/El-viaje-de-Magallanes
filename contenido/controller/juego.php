@@ -52,7 +52,7 @@
                             echo $br;
                             echo $br;
 
-                            echo "<input type='submit' value='Validar Respuesta' name='validar'>";
+                            echo "<input type='button' value='Validar Respuesta' name='validar'>";
 
                         echo "</form>";
                     

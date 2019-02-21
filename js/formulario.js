@@ -38,7 +38,7 @@ window.onload = function() {
 
 			//---------------------------------------------------------//
 
-			alert("No has introducido datos en el campo nombre o curso");
+			alert("No has introducido datos en el campo nombre ni tampoco el campo curso del formulario");
 
 			e.preventDefault();
 		}
@@ -66,27 +66,5 @@ window.onload = function() {
 			elementos[i].addEventListener("blur", blurInput);
 		}
 	}
-
-	
-	//--------------------------------- Se enviarán los datos por Ajax ---------------------------------//
-	$("input[type='submit']").click(function () {
-
-		var nombre = $("#nombre").val();
-		var curso = $("#curso").val();
-
-		$.post("juego.php", { nombre: nombre, curso: curso }, function (respuesta) {
-
-			// Tratamos de mostrar el nombre en el body del documento juego.php
-
-			var nombre = $("<p>");
-			nombre.text(respuesta['nombre']);
-
-			$("body").append(nombre);
-
-		}, "json");
-
-	});
-	//------------------------------------------------------------------------------------------//
-
 
 };

@@ -257,7 +257,7 @@ p {
 	display: none;
 }
 
-input[type="submit"] {
+input[type="button"] {
 	background: black;
 	border-radius: 1px;
 	border: 2px solid #f2f2f2;
