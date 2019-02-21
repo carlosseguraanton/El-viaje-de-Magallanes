@@ -28,7 +28,7 @@ class Usuario {
   public function insertUsuario() {
     $conexion = conexionBD::connect();
 
-    $sqlInsert = "INSERT INTO usuario (nombre, curso, puntuacion) VALUES (\"" . $this->nombre . "\", \"" . $this->curso . "\", \"" . $this->puntuacion . "\")";
+    $sqlInsert = "INSERT INTO usuario (nombre, curso) VALUES (\"" . $this->nombre . "\", \"" . $this->curso . "\")";
     
     $conexion->exec($sqlInsert);
   }
