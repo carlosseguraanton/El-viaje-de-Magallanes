@@ -93,12 +93,18 @@
 
     if ($respuestaSeleccionada === $respuestac) {
 
-        // Aquí habría que darle puntos al usuario.
+        $puntuacion = 20;
 
-        echo "Has acertado";
+        Usuario::setPuntuacion($puntuacion);
+
+        echo "La puntuación del usuario es: " . $usuario->getPuntuacion();
+
+        echo "Has acertado la respuesta correcta";
 
     } else {
-        echo "No has acertado. La respuesta correcta es: " . $respuestac;
+
+        echo "No has acertado la respuesta correcta. La respuesta correcta es: " . $respuestac;
+
     }
 
     
