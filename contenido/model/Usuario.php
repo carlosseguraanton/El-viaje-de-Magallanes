@@ -33,13 +33,13 @@ class Usuario {
     $conexion->exec($sqlInsert);
   }
 
-  public function setPuntuacion($puntuacion) {
+  /*public function updatePuntuacionUsuario($puntuacion) {
     $conexion = conexionBD::connect();
 
     $sqlUpdate = "UPDATE usuario SET puntuacion = $puntuacion WHERE codigo = \"" . $this->codigo . "\"";
 
     $conexion->exec($sqlUpdate);
-  }
+  }*/
 
   public static function getUsuario($codigo) {
     $conexion = conexionBD::connect();
